@@ -1,0 +1,6 @@
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+@import './variables';
+body {
+    background-color: $background-color;
+    font-family: 'Roboto', sans-serif;
+}

@@ -1,0 +1,29 @@
+@import '../../../../variables';
+
+select {
+    padding: $select-padding;
+    border-radius: $select-border-radius;
+    border: 1px solid $select-border-color;
+    background-color: $select-background-color;
+    font-size: $select-font-size;
+    color: $select-text-color;
+    outline: none;
+    cursor: pointer;
+    transition: $select-transition;
+  }
+  
+  select:hover {
+    border-color: $select-hover-border-color;
+    background-color: $select-hover-background-color;
+  }
+  
+  select:focus {
+    border-color: $select-focus-border-color;
+    box-shadow: 0 0 5px $select-focus-box-shadow-color;
+  }
+  
+  option {
+    font-size: $option-font-size;
+    padding: $option-padding;
+  }
+  

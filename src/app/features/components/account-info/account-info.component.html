@@ -1,0 +1,115 @@
+<div class="manage-account">
+  <h2>My Retirement</h2>
+  <div class="account-details">
+    <div class="account-details-header">
+      <h3 class="manage-title">Manage</h3>
+      <app-button
+        label="Enquire History"
+        buttonClass="light-button">
+      </app-button>
+    </div>
+    <div class="account-info">
+      <div class="account-data">
+        <div class="account-value">
+          <span class="label">Creation date:</span>
+          <span class="value">{{ accountData?.creationDate || 'N/A' }}</span>
+        </div>
+        <div class="actions"></div>
+      </div>
+      <div class="account-data">
+        <div class="account-value">
+          <span class="label">Investment amount: TWD</span>
+          <span class="value">{{ accountData?.investmentAmount?.toLocaleString() || '0' }}</span>&nbsp;(per month)
+        </div>
+        <div class="actions">
+          <app-button
+            label="Adjust Amount"
+            buttonClass="light-button">
+          </app-button>
+        </div>
+      </div>
+      <div class="account-data">
+        <div class="account-value">
+          <span class="label">Account number:</span>
+          <span class="value">{{ accountData?.accountNumber || 'N/A' }}</span>
+        </div>
+        <div class="actions">
+          <i class="fa-solid fa-pencil edit-icon" (click)="openEditDialog()"></i>
+        </div>
+      </div>
+      <div class="account-data">
+        <div class="account-value">
+          <span class="label">Current market value: TWD</span>
+          <span class="value">{{ accountData?.currentMarketValue?.toLocaleString() || '0' }}</span>
+        </div>
+        <div class="actions">
+          <app-button
+            label="Redemption"
+            buttonClass="light-button">
+          </app-button>
+        </div>
+      </div>
+      <div class="account-data">
+        <div class="account-value">
+          <span class="label">Charge date:</span>
+          <span class="value">{{ accountData?.chargeDate || 'N/A' }}</span>&nbsp;(Next payment date: 2018-11-01)
+        </div>
+        <div class="actions">
+          <i class="fa-solid fa-pencil edit-icon"></i>
+        </div>
+      </div>
+      <div class="account-data">
+        <div class="account-value">
+          <span class="label">Accumulated investment amount: TWD</span>
+          <span class="value">{{ accountData?.accumulatedAmount?.toLocaleString() || '0' }}</span>
+        </div>
+        <div class="actions"></div>
+      </div>
+      <div class="account-data">
+        <div class="account-value">
+          <span class="label">Status:</span>
+          <span class="value">{{ accountData?.status || 'N/A' }}</span>
+        </div>
+        <div class="actions">
+          <app-button
+            label="Suspension of investment"
+            buttonClass="light-button">
+          </app-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <app-button
+    label="Back to Home"
+    iconClass="fas fa-arrow-left"
+    buttonClass="ok-button back-button"
+    ></app-button>
+</div>
+
+<app-common-modal
+  [title]="'Change Account Number'"
+  [visible]="modalVisible"
+  (onClose)="closeModal()"
+  (onSave)="saveAccountNumber()"
+>
+  <div class="account-edit-form-container">
+  <label>Please select your debit account number:</label>
+  <form>
+    <app-select
+      [options]="[{ value: 'TWD', label: 'TWD' }, { value: 'USD', label: 'USD' }]"
+      [(selectedValue)]="selectedCurrency"
+      name="currencySelect"
+    ></app-select>
+    <app-select
+      [options]="accountOptionsForSelect"
+      [(selectedValue)]="selectedAccountNumber"
+      name="accountSelect"
+      (selectedValueChange)="updateSelectedAccountBalance()"
+    ></app-select>
+    <div class="account-balance">
+      Account balance: {{ selectedAccountBalance?.toLocaleString() || 'N/A' }}
+    </div>
+  </form>
+</div>
+</app-common-modal>

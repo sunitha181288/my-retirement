@@ -1,0 +1,43 @@
+$primary-color: #145faf;
+$hover-color: #145faf;
+$success-color: #28a745;
+$error-color: #ff0000;
+$background-color: #f9f9f9;
+$border-color: #ddd;
+$text-color: #555;
+$heading-color: #333;
+$modal-background-color: rgba(0, 0, 0, 0.5);
+$modal-box-background-color: white;
+$modal-shadow-color: rgba(0, 0, 0, 0.1);
+$manage-background-color: white;
+$cancel-button-background: #ccc;
+$cancel-button-hover-background: darken($cancel-button-background, 10%);
+$button-success-background: $success-color;
+$select-border-color: #ccc;
+$select-background-color: #f9f9f9;
+$select-hover-border-color: #888;
+$select-hover-background-color: #f1f1f1;
+$select-focus-border-color: #0066cc;
+$select-focus-box-shadow-color: rgba(0, 102, 204, 0.5);
+$select-text-color: #333;
+$info-color: #a29b9b;
+$account-header-color: #bfb4b4;
+
+$base-font-size: 16px;
+$heading-font-size: 24px;
+$subheading-font-size: 18px;
+$title-font-size: 20px;
+$select-padding: 10px;
+$select-border-radius: 8px;
+$select-font-size: 16px;
+
+$button-padding: 10px 20px;
+$button-radius: 5px; 
+$option-padding: 10px;
+$option-font-size: 16px;
+
+$modal-padding: 20px;       
+$modal-border-radius: 10px; 
+$modal-width: 40%;          
+
+$select-transition: all 0.3s ease;

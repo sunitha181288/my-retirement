@@ -1,0 +1,96 @@
+@import '../../../../variables';
+
+.account-edit-form-container {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 15px;
+  label {
+    text-align: left;
+    font-weight: 500;
+  }
+  form {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    @media screen and (max-width: 768px) {
+      display: grid;
+    }
+  
+    select {
+      min-width: 80px;
+      max-width: 200px;
+    }
+  }
+}
+
+.manage-account {
+  padding: 20px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+
+  .account-value {
+    .label {
+      margin-right: 8px;
+    }
+  }
+
+  .account-details-header {
+    border-bottom: solid 1px $account-header-color;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+  }
+  
+  h2 {
+    font-size: $heading-font-size;
+    color: $heading-color;
+    margin-bottom: 20px;
+  }
+
+  .account-details {
+    border: 1px solid $border-color;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: $manage-background-color;
+    
+    .actions {
+      display: flex;
+      align-items: center;
+      height: 50px;
+    }
+
+    .account-info {
+      display: grid;
+      grid-template-columns: 48% 48%;
+      justify-content: space-between;
+      
+      @media screen and (max-width: 768px) {
+        grid-template-columns: auto;
+      }
+    }
+
+    .account-data {
+      font-size: $base-font-size;
+      color: $text-color;
+      margin: 12px 0;
+      align-items: center;
+      gap: 10px;
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      .value {
+        color: $primary-color;
+      }
+    }
+    i {
+      color: $primary-color;
+      margin-left: 10px;
+      cursor: pointer;
+
+      &:hover {
+        color: $hover-color;
+      }
+    }
+  }
+}

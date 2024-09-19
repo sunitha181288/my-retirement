@@ -1,0 +1,27 @@
+<div
+  class="modal-overlay"
+  *ngIf="visible"
+  role="dialog"
+  aria-labelledby="modal-title"
+  aria-modal="true"
+  tabindex="-1"
+>
+  <div class="modal-box">
+    <h4 class="modal-title" id="modal-title">{{ title }}</h4>
+    <ng-content></ng-content>
+    <div class="modal-buttons">
+      <app-button
+        label="Cancel"
+        buttonClass="cancel-button"
+        (clicked)="close()"
+        ariaLabel="Cancel modal"
+      ></app-button>
+      <app-button
+        label="Determine"
+        buttonClass="ok-button"
+        (clicked)="save()"
+        ariaLabel="Confirm changes"
+      ></app-button>
+    </div>
+  </div>
+</div>
