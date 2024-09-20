@@ -5,18 +5,9 @@ import { AccountInfoComponent } from './components/account-info/account-info.com
 import { SharedModule } from '../shared/shared.module';
 import { AccountService } from './services/account.service';
 
-
 @NgModule({
-    declarations: [
-        AccountInfoComponent
-    ],
-    imports: [
-        CommonModule,
-        FormsModule,
-        SharedModule
-    ],
-    providers: [
-        AccountService
-    ]
+  declarations: [],
+  imports: [CommonModule, FormsModule, SharedModule, AccountInfoComponent],
+  providers: [AccountService],
 })
-export class AccountManagementModule { }
+export class AccountManagementModule {}
